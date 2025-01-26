@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Racing Game</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>Race Simulator</h1>
+  </header>
+
+  <main>
+    <section class="track-section">
+      <h2>New Track</h2>
+      <div class="form-row">
+        <label for="nombre-circuito">Name:</label>
+        <input type="text" id="nombre-circuito">
+      </div>
+      <div class="form-row">
+        <label for="longitud-circuito">Length:</label>
+        <input type="number" id="longitud-circuito">
+      </div>
+      <div class="form-row">
+        <label for="tiempo-circuito">Weather:</label>
+        <select id="tiempo-circuito">
+          <option value="lluvioso">Rainy</option>
+          <option value="húmedo">Humid</option>
+          <option value="seco">Dry</option>
+        </select>
+      </div>
+      <button id="nueva-carrera">New Race</button>
+    </section>
+
+    <section class="vehicle-section">
+      <h2>New Vehicle</h2>
+      <div class="form-row">
+        <label for="modelo-input">Model:</label>
+        <input type="text" id="modelo-input">
+      </div>
+      <div class="form-row">
+        <label for="min-vel">Min Speed:</label>
+        <input type="number" id="min-vel">
+        <label for="max-vel">Max Speed:</label>
+        <input type="number" id="max-vel">
+      </div>
+      <div class="form-row">
+        <label for="tipo-traccion">Traction Type:</label>
+        <select id="tipo-traccion">
+          <option value="blanda">Soft</option>
+          <option value="mediana">Medium</option>
+          <option value="dura">Hard</option>
+        </select>
+        <label for="tipo-vehiculo">Vehicle Type:</label>
+        <select id="tipo-vehiculo">
+          <option value="Motorcycle">Motorcycle</option>
+          <option value="Car">Car</option>
+        </select>
+      </div>
+      <button id="nuevo-vehiculo">New Vehicle</button>
+      <button id="cargar-estadisticas-vehiculo">Load Stats</button>
+    </section>
+
+    <section class="participant-section">
+      <h2>Participant Management</h2>
+      <div class="form-row">
+        <label for="participante-input">Name:</label>
+        <input list="participants-list" id="participante-input">
+        <datalist id="participants-list"></datalist>
+      </div>
+      <div class="form-row">
+        <label for="vehiculo-input">Vehicle:</label>
+        <input list="vehicles-list" id="vehiculo-input">
+        <datalist id="vehicles-list"></datalist>
+      </div>
+      <button id="guardar-participante">Save Participant</button>
+      <button id="cargar-estadisticas-participante">Load Stats</button>
+    </section>
+
+    <section class="assignment-section">
+      <h2>Assign Participant to Track</h2>
+      <div class="form-row">
+        <label for="tracks-list">Track:</label>
+        <select id="tracks-list"></select>
+        <label for="participants-list2">Participant:</label>
+        <select id="participants-list2"></select>
+      </div>
+      <button id="asignar-participante">Assign Participant</button>
+
+      <h2>Remove Participant from Track</h2>
+      <div class="form-row">
+        <label for="tracks-list-quitar">Track:</label>
+        <select id="tracks-list-quitar"></select>
+        <label for="participants-list-quitar">Participant:</label>
+        <select id="participants-list-quitar"></select>
+      </div>
+      <button id="quitar-participante">Remove Participant</button>
+    </section>
+
+    <section class="track-details">
+      <h2>Load Track</h2>
+      <div id="circuito-output">
+        <p id="circuito-nombre">Track Name</p>
+        <p id="circuito-tipo">Weather Type</p>
+        <p id="circuito-longitud">Length</p>
+        <button id="start-carrera">START!</button>
+      </div>
+      <div id="race"></div>
+    </section>
+
+    <section class="podium-section">
+      <h2>Podium</h2>
+      <div id="podio-output"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./motor_game/app.js" defer></script>
+</body>
+</html>
